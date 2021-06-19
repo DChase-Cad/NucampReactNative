@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import { Card } from 'react-native-elements';
-import { Text} from 'react-native';
+import { Text, View } from 'react-native';
 
 
 class Contact extends Component {
@@ -11,6 +11,7 @@ class Contact extends Component {
     }
 
     render() {
+
         return (
             <ScrollView>
                 <Card
@@ -19,11 +20,15 @@ class Contact extends Component {
                 >
                     <Text>1 Nucamp Way</Text>
                     <Text>Seattle, WA 98001</Text>
-                    <Text
-                        style={{ marginBottom: 10 }}
-                    >U.S.A.</Text>
-                    <Text>Phone: 1-206-555-1234</Text>
-                    <Text>Email: campsites@nucamp.co</Text>
+                    <Text style={{ marginBottom: 20, fontWeight: 'bold', color: 'blue', marginLeft: '12%' }}>U.S.A.</Text>
+                    <Text>
+                        <Text style={{ fontWeight: 'bold' }}>Phone: </Text>
+                        1-206-555-1234
+                    </Text>
+                    <Text>
+                        <Text style={{ fontWeight: 'bold' }}>E-mail: </Text>
+                        campsites@nucamp.co
+                    </Text>
 
                 </Card>
             </ScrollView>
