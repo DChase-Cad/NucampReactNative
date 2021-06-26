@@ -16,9 +16,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    postFavorite: campsiteId => (postFavorite(campsiteId)),
+    postFavorite,
     postComment
-
 };
 
 function RenderCampsite(props) {
