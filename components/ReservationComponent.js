@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
-    Text, View, ScrollView, StyleSheet,
-    Picker, Switch, Button, Modal
-} from 'react-native';
+    Text, View, ScrollView, StyleSheet, Switch, Button, Modal,Picker} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 class Reservation extends Component {
@@ -65,7 +63,7 @@ class Reservation extends Component {
                     <Switch
                         style={styles.formItem}
                         value={this.state.hikeIn}
-                        trackColor={{ true: '#5637DD', false: 'null' }}
+                        trackColor={{ true: '#5637DD', false: '' }}
                         onValueChange={value => this.setState({ hikeIn: value })}
                     />
                 </View>
