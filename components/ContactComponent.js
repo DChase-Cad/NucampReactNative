@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
 import { Card } from 'react-native-elements';
 import { Text } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 
 class Contact extends Component {
@@ -14,23 +15,26 @@ class Contact extends Component {
 
         return (
             <ScrollView>
-                <Card
-                    title='Contact Information'
-                    wrapperStyle={{ margin: 20 }}
-                >
-                    <Text>1 Nucamp Way</Text>
-                    <Text>Seattle, WA 98001</Text>
-                    <Text style={{ marginBottom: 20, fontWeight: 'bold', color: 'blue', marginLeft: '12%' }}>U.S.A.</Text>
-                    <Text>
-                        <Text style={{ fontWeight: 'bold' }}>Phone: </Text>
-                        1-206-555-1234
-                    </Text>
-                    <Text>
-                        <Text style={{ fontWeight: 'bold' }}>E-mail: </Text>
-                        campsites@nucamp.co
-                    </Text>
+                <Animatable.View animation='fadeInDown' duration={2000} delay={1000}>
 
-                </Card>
+                    <Card
+                        title='Contact Information'
+                        wrapperStyle={{ margin: 20 }}
+                    >
+                        <Text>1 Nucamp Way</Text>
+                        <Text>Seattle, WA 98001</Text>
+                        <Text style={{ marginBottom: 20, fontWeight: 'bold', color: 'blue', marginLeft: '12%' }}>U.S.A.</Text>
+                        <Text>
+                            <Text style={{ fontWeight: 'bold' }}>Phone: </Text>
+                            1-206-555-1234
+                        </Text>
+                        <Text>
+                            <Text style={{ fontWeight: 'bold' }}>E-mail: </Text>
+                            campsites@nucamp.co
+                        </Text>
+
+                    </Card>
+                </Animatable.View>
             </ScrollView>
         );
     }

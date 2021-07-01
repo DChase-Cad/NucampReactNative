@@ -229,6 +229,20 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
+        Favorites: {
+            screen: FavoritesNavigator,
+            navigationOptions: {
+                drawerLabel: 'My Favorites',
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='heart'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
         About: {
             screen: AboutNavigator,
             navigationOptions: {
@@ -250,20 +264,6 @@ const MainNavigator = createDrawerNavigator(
                 drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='address-card'
-                        type='font-awesome'
-                        size={24}
-                        color={tintColor}
-                    />
-                )
-            }
-        },
-        Favorites: {
-            screen: FavoritesNavigator,
-            navigationOptions: {
-                drawerLabel: 'My Favorites',
-                drawerIcon: ({tintColor}) => (
-                    <Icon
-                        name='heart'
                         type='font-awesome'
                         size={24}
                         color={tintColor}
