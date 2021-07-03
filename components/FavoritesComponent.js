@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     deleteTouchable: {
-        backgroundColor: 'red',
+        backgroundColor: '#ff5349',
         height: '100%',
         justifyContent: 'center'
     },
