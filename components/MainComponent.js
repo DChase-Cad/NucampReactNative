@@ -15,7 +15,7 @@ import Favorites from './FavoritesComponent';
 import { connect } from 'react-redux';
 import { fetchCampsites, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
 import Reservation from './ReservationComponent';
-
+import Login from './LoginComponent'
 
 const mapDispatchToProps = {
     fetchCampsites,
@@ -23,6 +23,29 @@ const mapDispatchToProps = {
     fetchPartners,
     fetchPromotions
 };
+
+const LoginNavigator = createStackNavigator(
+    {
+        Login: { screen: Login }
+    },
+    {
+        defaultNavigationOptions: ({ navigation }) => ({
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='sign-in'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
+        })
+    }
+);
 
 const CustomDrawerContentComponent = props => (
     <ScrollView>
@@ -47,7 +70,7 @@ const FavoritesNavigator = createStackNavigator(
         Favorites: { screen: Favorites }
     },
     {
-        defaultNavigationOptions: ({navigation}) => ({
+        defaultNavigationOptions: ({ navigation }) => ({
             headerStyle: {
                 backgroundColor: '#5637DD'
             },
@@ -189,6 +212,19 @@ const ReservationNavigator = createStackNavigator(
 
 const MainNavigator = createDrawerNavigator(
     {
+        Login: {
+            screen: LoginNavigator,
+            navigationOptions: {
+                drawerIcon: ({ tintColor }) => (
+                    <Icon
+                        name='sign-in'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
         Home: {
             screen: HomeNavigator,
             navigationOptions: {
@@ -218,7 +254,7 @@ const MainNavigator = createDrawerNavigator(
         Reservation: {
             screen: ReservationNavigator,
             navigationOptions: {
-                drawerLabel:'Reserve Campsite',
+                drawerLabel: 'Reserve Campsite',
                 drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='tree'
@@ -233,7 +269,7 @@ const MainNavigator = createDrawerNavigator(
             screen: FavoritesNavigator,
             navigationOptions: {
                 drawerLabel: 'My Favorites',
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({ tintColor }) => (
                     <Icon
                         name='heart'
                         type='font-awesome'
@@ -272,8 +308,9 @@ const MainNavigator = createDrawerNavigator(
             }
         },
     },
-    
+
     {
+        initialRouteName:'Home',
         drawerBackgroundColor: '#CEC8FF',
         contentComponent: CustomDrawerContentComponent
     }
